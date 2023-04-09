@@ -1,17 +1,17 @@
 module.exports = {
   root: true,
   env: {
+    browser: true,
     node: true,
   },
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'prettier', 'vue'],
-  extends: ['plugin:@typescript-eslint/recommended', 'plugin:vue/recommended', 'prettier'],
-  settings: {
-    'import/resolver': {
-      typescript: {},
-    },
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
   },
+  extends: ['plugin:vue/strongly-recommended', 'eslint:recommended', '@vue/typescript/recommended', 'prettier'],
+  plugins: ['@typescript-eslint', 'prettier'],
   rules: {
-    // add your custom rules here
+    'prettier/prettier': 'error',
+    'vue/multi-word-component-names': 'off',
   },
 }
